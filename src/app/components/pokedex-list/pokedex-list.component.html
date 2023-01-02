@@ -1,0 +1,12 @@
+<h2>Listado</h2>
+
+<div class="container">
+    <cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+     <div  [@fadeIn]="'in'"class="listado">
+        <mat-card  *cdkVirtualFor="let item of pokedex">
+            <mat-card-title>{{item.name.english}}</mat-card-title>
+            <mat-card-content>League {{item.name.english}}</mat-card-content>
+          </mat-card>
+     </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
