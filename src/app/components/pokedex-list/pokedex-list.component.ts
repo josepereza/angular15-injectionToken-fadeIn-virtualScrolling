@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { PokedexService } from 'src/app/services/pokedex.service';
 import { trigger, state, transition, style, animate } from '@angular/animations';
+import { LISTADO } from 'src/app/app.module';
 
 
 @Component({
@@ -20,7 +21,9 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
 export class PokedexListComponent {
 
   pokedex:any[]=[]
-  constructor(private pokedexService:PokedexService){
+  constructor(private pokedexService:PokedexService,
+    @Inject(LISTADO) public listApp: string
+    ){
 
   }
   ngOnInit(): void {

@@ -12,6 +12,11 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatCardModule} from '@angular/material/card'; 
 
     export const APIURL = new InjectionToken<string>('');
+
+    export const LISTADO= new InjectionToken<string>('');
+
+    const getListado=()=>'Listado BlueApp'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +34,7 @@ import {MatCardModule} from '@angular/material/card';
   bootstrap: [AppComponent],
   providers: [
    { provide: APIURL, useValue: '../assets/data/pokedex.json' },
+   { provide: LISTADO, useFactory: getListado}
   
    ]
 })
